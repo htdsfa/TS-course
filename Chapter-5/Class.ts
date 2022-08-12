@@ -1,7 +1,7 @@
 class Department {
     //private id: string;
     //private name: string;
-    private employees: string[] = []
+    protected employees: string[] = []
 
     constructor(private readonly id: string, public name: string) {
         //this.id = id
@@ -38,6 +38,13 @@ class AccountingDepartment extends Department {
     constructor(id: string, private reports: string[]) {
         super(id, 'Accounting');
     }
+    addEmployee(name: string) {
+        if(name==='Max'){
+            return;
+
+        }
+        this.employees.push(name)
+    }
 
     addReport(text: string) {
         this.reports.push(text)
@@ -53,12 +60,20 @@ const it = new ITDepartment('d1', ['Accounting']);
 
 it.addEmployee('Max')
 it.addEmployee('Manuel')
+
 //accounting.employees[2] = 'anna';
 it.describe();
+
 it.printEmployeeInformation();
+
 console.log(it)
+
 const accounting = new AccountingDepartment('d2', [])
 accounting.addReport('Something went wrong')
+
+accounting.addEmployee('Max')
+accounting.addEmployee('Manuel')
+
 accounting.printReports();
 //const accountingCopy = {name: 's', describe: accounting.describe}
 //accountingCopy.describe()
