@@ -30,16 +30,21 @@ function add(a: Combinable, b: Combinable) {
     }
     return a + b;
 }
-const result =add('Max', "Schwarz")
+
+const result = add('Max', "Schwarz")
 result.split(' ')
 
-const fetchedUserData={
+const fetchedUserData = {
     id: 'u1',
-    name:'Max'
+    name: 'Max'
     //job: {title: 'CEO', description: 'My own company'}
 
 }
 console.log(fetchedUserData?.job?.title)
+
+const userInput = '';
+const storedData = userInput ?? 'DEFAULT';
+console.log(storedData)
 
 type UnknownEmployee = Employee | Admin;
 
@@ -133,7 +138,4 @@ const errorBag: ErrorContainer = {
     email: 'Not a valid email',
     username: 'Must start with a capital character'
 }
-//***********************************************************************************
-//***********************************************************************************
-//***********************************************************************************
 //***********************************************************************************
